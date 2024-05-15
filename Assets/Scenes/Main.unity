@@ -310,8 +310,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1073510725}
+  - component: {fileID: 1073510726}
   m_Layer: 0
-  m_Name: MyHome
+  m_Name: MyHouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -332,3 +333,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1073510726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073510724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 247088f04eebe48a78ff809b43c8bc6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomLayout: 0
+  living: 0
+  bedRoom: 0
+  bedSize: 0
+  kichin: 0
+  bathRoom: 0
+  toiletRoom: 0
+  workRoom: 0
+  kichinStove: 0
+  riceCooker: 0
+  trashCan: 0
+  oven: 0
+  pod: 0
+  tableware: 0
+  cup: 0
+  knife: 0
+  spoon: 0
+  desk: 0
+  chair: 0
+  sofa: 0
+  tv: 0
+  airConditioner: 0
+  curtain: 0
+  bed: 0
+  pillow: 0
+  blanket: 0
+  illumination: 0
+  condom: 0
+  computer: 0
+  closet: 0
+  clothes: 0
+  gameMachine: 0
+  syampoo: 0
+  toiletPaper: 0
