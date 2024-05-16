@@ -110,20 +110,20 @@ public class MyHouse : MonoBehaviour
 
     class Room
     {
-        private readonly RoomLayout _roomLayoutNow;
-        private readonly bool _roomLayoutJudge;
+        private readonly RoomLayout roomLayoutNow;
+        private readonly bool roomLayoutJudge;
 
         public Room(RoomLayout roomLayout, bool riving)
         {
-            _roomLayoutNow = roomLayout;
-            _roomLayoutJudge = riving;
+            roomLayoutNow = roomLayout;
+            roomLayoutJudge = riving;
         }
 
         public void RoomLayoutDeb()
         {
-            if (_roomLayoutJudge == true)
+            if (roomLayoutJudge == true)
             {
-                Debug.Log($"間取りは{_roomLayoutNow}です");
+                Debug.Log($"間取りは{roomLayoutNow}です");
             }
             else
             {
@@ -135,35 +135,35 @@ public class MyHouse : MonoBehaviour
 
     class LivingRoom
     {
-        private readonly int _desk;
-        private readonly int _chair;
-        private readonly int _sofa;
-        private readonly int _tv;
-        private readonly int _airConditioner;
-        private readonly int _curtain;
-        private readonly bool _living;
+        private readonly int desk;
+        private readonly int chair;
+        private readonly int sofa;
+        private readonly int tv;
+        private readonly int airConditioner;
+        private readonly int curtain;
+        private readonly bool living;
 
         public LivingRoom(int desk, int chair, int sofa, int tv, int airConditioner, int curtain, bool living)
         {
-            _desk = desk;
-            _chair = chair;
-            _sofa = sofa;
-            _tv = tv;
-            _airConditioner = airConditioner;
-            _curtain = curtain;
-            _living = living;
+            this.desk = desk;
+            this.chair = chair;
+            this.sofa = sofa;
+            this.tv = tv;
+            this.airConditioner = airConditioner;
+            this.curtain = curtain;
+            this.living = living;
         }
 
         public void LivingDeb()
         {
-            if (_living == true)
+            if (living == true)
             {
-                Debug.Log($"机は{_desk}個あるよ");
-                Debug.Log($"イスは{_chair}個あるよ");
-                Debug.Log($"ソファは{_sofa}個あるよ");
-                Debug.Log($"テレビは{_tv}個あるよ");
-                Debug.Log($"エアコンは{_airConditioner}個あるよ");
-                Debug.Log($"カーテンは{_curtain}個あるよ");
+                Debug.Log($"机は{desk}個あるよ");
+                Debug.Log($"イスは{chair}個あるよ");
+                Debug.Log($"ソファは{sofa}個あるよ");
+                Debug.Log($"テレビは{tv}個あるよ");
+                Debug.Log($"エアコンは{airConditioner}個あるよ");
+                Debug.Log($"カーテンは{curtain}個あるよ");
             }
             else { return; };
 
@@ -172,48 +172,48 @@ public class MyHouse : MonoBehaviour
 
     class KichinRoom
     {
-        private readonly int _kichinStove;
-        private readonly int _riceCooker;
-        private readonly int _trashCan;
-        private readonly int _oven;
-        private readonly int _pod;
-        private readonly int _tableware;
-        private readonly int _cup;
-        private readonly int _knife;
-        private readonly int _spoon;
-        private readonly bool _kichin;
+        private readonly int kichinStove;
+        private readonly int riceCooker;
+        private readonly int trashCan;
+        private readonly int oven;
+        private readonly int pod;
+        private readonly int tableware;
+        private readonly int cup;
+        private readonly int knife;
+        private readonly int spoon;
+        private readonly bool kichin;
 
 
         public KichinRoom(int kichinStove, int riceCooker, int trashCan, int oven,
             int pod, int tableware, int cup, int knife, int spoon, bool kichin)
         {
-            _kichinStove = kichinStove;
-            _riceCooker = riceCooker;
-            _trashCan = trashCan;
-            _oven = oven;
-            _pod = pod;
-            _tableware = tableware;
-            _cup = cup;
-            _knife = knife;
-            _spoon = spoon;
+            this.kichinStove = kichinStove;
+            this.riceCooker = riceCooker;
+            this.trashCan = trashCan;
+            this.oven = oven;
+            this.pod = pod;
+            this.tableware = tableware;
+            this.cup = cup;
+            this.knife = knife;
+            this.spoon = spoon;
 
-            _kichin = kichin;
+            this.kichin = kichin;
         }
 
         public void KichinRoomDeb()
         {
 
-            if (_kichin == true)
+            if (kichin == true)
             {
-                Debug.Log($"キッチンストーブは{_kichinStove}個あるよ");
-                Debug.Log($"炊飯器は{_riceCooker}個あるよ");
-                Debug.Log($"ゴミ箱は{_trashCan}個あるよ");
-                Debug.Log($"オーブンは{_oven}個あるよ");
-                Debug.Log($"ポッドは{_pod}個あるよ");
-                Debug.Log($"食器は{_tableware}個あるよ");
-                Debug.Log($"コップは{_cup}個あるよ");
-                Debug.Log($"ナイフは{_knife}個あるよ");
-                Debug.Log($"スプーンは{_spoon}個あるよ");
+                Debug.Log($"キッチンストーブは{kichinStove}個あるよ");
+                Debug.Log($"炊飯器は{riceCooker}個あるよ");
+                Debug.Log($"ゴミ箱は{trashCan}個あるよ");
+                Debug.Log($"オーブンは{oven}個あるよ");
+                Debug.Log($"ポッドは{pod}個あるよ");
+                Debug.Log($"食器は{tableware}個あるよ");
+                Debug.Log($"コップは{cup}個あるよ");
+                Debug.Log($"ナイフは{knife}個あるよ");
+                Debug.Log($"スプーンは{spoon}個あるよ");
             }
             else { return; };
 
@@ -222,34 +222,34 @@ public class MyHouse : MonoBehaviour
 
     class BedRoom
     {
-        private BedSize _bedSize;
-        private readonly int _bed;
-        private readonly int _pillow;
-        private readonly int _blanket;
-        private readonly int _illumination;
-        private readonly int _condom;
-        private readonly bool _bedRoom;
+        private BedSize bedSize;
+        private readonly int bed;
+        private readonly int pillow;
+        private readonly int blanket;
+        private readonly int illumination;
+        private readonly int condom;
+        private readonly bool bedRoom;
 
         public BedRoom(BedSize bedSize, int bed, int pillow, int blanket, int illumination, int condom, bool bedRoom)
         {
-            _bedSize = bedSize;
-            _bed = bed;
-            _pillow = pillow;
-            _blanket = blanket;
-            _illumination = illumination;
-            _condom = condom;
-            _bedRoom = bedRoom;
+            this.bedSize = bedSize;
+            this.bed = bed;
+            this.pillow = pillow;
+            this.blanket = blanket;
+            this.illumination = illumination;
+            this.condom = condom;
+            this.bedRoom = bedRoom;
         }
 
         public void BedRoomDeb()
         {
-            if (_bedRoom == true)
+            if (bedRoom == true)
             {
-                Debug.Log($"ベッドは{_bed}個あるよ");
-                Debug.Log($"枕は{_pillow}個あるよ");
-                Debug.Log($"毛布は{_blanket}個あるよ");
-                Debug.Log($"照明は{_illumination}個あるよ");
-                Debug.Log($"コンドームは{_condom}個あるよ");
+                Debug.Log($"ベッドは{bed}個あるよ");
+                Debug.Log($"枕は{pillow}個あるよ");
+                Debug.Log($"毛布は{blanket}個あるよ");
+                Debug.Log($"照明は{illumination}個あるよ");
+                Debug.Log($"コンドームは{condom}個あるよ");
             }
             else { return; };
 
@@ -258,29 +258,29 @@ public class MyHouse : MonoBehaviour
 
     class WorkRoom
     {
-        private readonly bool _workRoom;
-        private readonly int _computer;
-        private readonly int _closet;
-        private readonly int _clothes;
-        private readonly int _gameMachine;
+        private readonly bool workRoom;
+        private readonly int computer;
+        private readonly int closet;
+        private readonly int clothes;
+        private readonly int gameMachine;
 
         public WorkRoom(int computer, int closet, int clothes, int gameMachine, bool workRoom)
         {
-            _computer = computer;
-            _closet = closet;
-            _clothes = clothes;
-            _gameMachine = gameMachine;
-            _workRoom = workRoom;
+            this.computer = computer;
+            this.closet = closet;
+            this.clothes = clothes;
+            this.gameMachine = gameMachine;
+            this.workRoom = workRoom;
         }
 
         public void WorkRoomDeb()
         {
-            if (_workRoom == true)
+            if (workRoom == true)
             {
-                Debug.Log($"パソコンは{_computer}個あるよ");
-                Debug.Log($"クローゼットは{_closet}個あるよ");
-                Debug.Log($"服は{_clothes}個あるよ");
-                Debug.Log($"ゲーム機は{_gameMachine}個あるよ");
+                Debug.Log($"パソコンは{computer}個あるよ");
+                Debug.Log($"クローゼットは{closet}個あるよ");
+                Debug.Log($"服は{clothes}個あるよ");
+                Debug.Log($"ゲーム機は{gameMachine}個あるよ");
             }
             else { return; };
         }
@@ -288,21 +288,21 @@ public class MyHouse : MonoBehaviour
 
     class ToiletRoom
     {
-        private readonly int _toiletPaper;
-        private readonly bool _toiletRoom;
+        private readonly int toiletPaper;
+        private readonly bool toiletRoom;
 
 
         public ToiletRoom(int toiletPaper, bool toiletRoom)
         {
-            _toiletPaper = toiletPaper;
-            _toiletRoom = toiletRoom;
+            this.toiletPaper = toiletPaper;
+            this.toiletRoom = toiletRoom;
         }
 
         public void ToiletRoomDeb()
         {
-            if (_toiletRoom == true)
+            if (toiletRoom == true)
             {
-                Debug.Log($"トイレットペーパーは{_toiletPaper}個あるよ");
+                Debug.Log($"トイレットペーパーは{toiletPaper}個あるよ");
             }
             else { return; };
 
@@ -311,20 +311,20 @@ public class MyHouse : MonoBehaviour
 
     class BathRoom
     {
-        private readonly bool _bathRoom;
-        private readonly int _syampoo;
+        private readonly bool bathRoom;
+        private readonly int syampoo;
 
         public BathRoom(int syampoo, bool bathRoom)
         {
-            _syampoo = syampoo;
-            _bathRoom = bathRoom;
+            this.syampoo = syampoo;
+            this.bathRoom = bathRoom;
         }
 
         public void BathRoomDeb()
         {
-            if (_bathRoom == true)
+            if (bathRoom == true)
             {
-                Debug.Log($"シャンプーは{_syampoo}個あるよ");
+                Debug.Log($"シャンプーは{syampoo}個あるよ");
             }
             else { return; };
 
