@@ -4,14 +4,14 @@ public class MyHouse : MonoBehaviour
 {
 
     [SerializeField] private RoomLayout roomLayout;//間取り
-    [SerializeField] private bool living;//リビング
-    [SerializeField] private bool bedRoom;//ベッド
+    [SerializeField] private bool hasLiving;//リビング
+    [SerializeField] private bool hasBedRoom;//ベッド
     [SerializeField] private BedSize bedSize;
-    [SerializeField] private bool kichin;//キッチン
-    [SerializeField] private bool bathRoom;//風呂
-    [SerializeField] private bool toiletRoom;//トイレ
-    [SerializeField] private bool workRoom;//作業部屋
-
+    [SerializeField] private bool hasKichin;//キッチン
+    [SerializeField] private bool hasBathRoom;//風呂
+    [SerializeField] private bool hasToiletRoom;//トイレ
+    [SerializeField] private bool hasWorkRoom;//作業部屋
+    
     enum RoomLayout
     {
         OneRoom,
@@ -66,51 +66,49 @@ public class MyHouse : MonoBehaviour
     void Start()
     {
         //間取り
-        Room room = new(roomLayout, living);
+        Room room = new(roomLayout, hasLiving);
         room.RoomLayoutDeb();
 
         //キッチン
-        KichinRoom KR = new(kichinStove, riceCooker, oven, kichin);
-        KR.KichinRoomDeb();
+        KichinRoom kichinRoom = new(kichinStove, riceCooker, oven, hasKichin);
+        kichinRoom.KichinRoomDeb();
 
         //リビング
-        LivingRoom LR = new(desk, chair, sofa, living);
-        LR.LivingDeb();
+        LivingRoom livingRoom = new(desk, chair, sofa, hasLiving);
+        livingRoom.LivingDeb();
 
         //ベッドルーム
-        BedRoom BedR = new(bedSize, bed, pillow, bedRoom);
-        BedR.BedRoomDeb();
+        BedRoom bedRoom = new(bedSize, bed, pillow, hasBedRoom);
+        bedRoom.BedRoomDeb();
 
         //作業部屋
-        WorkRoom WR = new(computer, closet, workRoom);
-        WR.WorkRoomDeb();
+        WorkRoom workRoom = new(computer, closet, hasWorkRoom);
+        workRoom.WorkRoomDeb();
 
         //バスルーム
-        BathRoom BathR = new(syampoo, bathRoom);
-        BathR.BathRoomDeb();
+        BathRoom bathRoom = new(syampoo, hasBathRoom);
+        bathRoom.BathRoomDeb();
 
         ////トイレ
-        ToiletRoom TR = new(toiletPaper, toiletRoom);
-        TR.ToiletRoomDeb();
+        ToiletRoom toiletRoom = new(toiletPaper, hasToiletRoom);
+        toiletRoom.ToiletRoomDeb();
     }
 
     class Room
     {
         private readonly RoomLayout roomLayoutNow;
-        private readonly bool roomLayoutJudge;
+        private readonly bool hasRoomLayoutJudge;
 
-        public Room(RoomLayout roomLayout, bool riving)
+        public Room(RoomLayout roomLayout, bool hasLiving)
         {
             roomLayoutNow = roomLayout;
-            roomLayoutJudge = riving;
+            hasRoomLayoutJudge = hasLiving;
         }
 
         public void RoomLayoutDeb()
         {
-            if (!roomLayoutJudge)return;
-            {
-                Debug.Log($"間取りは{roomLayoutNow}です");
-            }
+            if (!hasRoomLayoutJudge)return;
+            Debug.Log($"間取りは{roomLayoutNow}です");
         }
 
     }
@@ -120,24 +118,22 @@ public class MyHouse : MonoBehaviour
         private readonly int desk;
         private readonly int chair;
         private readonly int sofa;
-        private readonly bool living;
+        private readonly bool hasLiving;
 
-        public LivingRoom(int desk, int chair, int sofa,bool living)
+        public LivingRoom(int desk, int chair, int sofa, bool hasLiving)
         {
             this.desk = desk;
             this.chair = chair;
             this.sofa = sofa;
-            this.living = living;
+            this.hasLiving = hasLiving;
         }
 
         public void LivingDeb()
         {
-            if (!living) return;
-            {
-                Debug.Log($"机は{desk}個あるよ");
-                Debug.Log($"イスは{chair}個あるよ");
-                Debug.Log($"ソファは{sofa}個あるよ");
-            }
+            if (!hasLiving) return;
+            Debug.Log($"机は{desk}個あるよ");
+            Debug.Log($"イスは{chair}個あるよ");
+            Debug.Log($"ソファは{sofa}個あるよ");
         }
     }
 
@@ -146,121 +142,105 @@ public class MyHouse : MonoBehaviour
         private readonly int kichinStove;
         private readonly int riceCooker;
         private readonly int oven;
-        private readonly bool kichin;
+        private readonly bool hasKichin;
 
 
-        public KichinRoom(int kichinStove, int riceCooker,int oven, bool kichin)
+        public KichinRoom(int kichinStove, int riceCooker, int oven, bool hasKichin)
         {
             this.kichinStove = kichinStove;
             this.riceCooker = riceCooker;
             this.oven = oven;
 
-            this.kichin = kichin;
+            this.hasKichin = hasKichin;
         }
 
         public void KichinRoomDeb()
         {
-
-            if (!kichin) return;
-            {
-                Debug.Log($"キッチンストーブは{kichinStove}個あるよ");
-                Debug.Log($"炊飯器は{riceCooker}個あるよ");
-                Debug.Log($"オーブンは{oven}個あるよ");
-            }
-
+            if (!hasKichin) return;
+            Debug.Log($"キッチンストーブは{kichinStove}個あるよ");
+            Debug.Log($"炊飯器は{riceCooker}個あるよ");
+            Debug.Log($"オーブンは{oven}個あるよ");
         }
     }
 
     class BedRoom
     {
-        private BedSize bedSize;
+        private readonly BedSize bedSize;
         private readonly int bed;
         private readonly int pillow;
-        private readonly bool bedRoom;
+        private readonly bool hasBedRoom;
 
-        public BedRoom(BedSize bedSize, int bed, int pillow, bool bedRoom)
+        public BedRoom(BedSize bedSize, int bed, int pillow, bool hasBedRoom)
         {
             this.bedSize = bedSize;
             this.bed = bed;
             this.pillow = pillow;
-            this.bedRoom = bedRoom;
+            this.hasBedRoom = hasBedRoom;
         }
 
         public void BedRoomDeb()
         {
-            if (!bedRoom) return;
-            {
-                Debug.Log($"ベッドは{bed}個あるよ");
-                Debug.Log($"枕は{pillow}個あるよ");
-            }
-
+            if (!hasBedRoom) return;
+            Debug.Log($"ベッドは{bed}個あるよ");
+            Debug.Log($"枕は{pillow}個あるよ");
         }
     }
 
     class WorkRoom
     {
-        private readonly bool workRoom;
         private readonly int computer;
         private readonly int closet;
+        private readonly bool hasWorkRoom;
 
-        public WorkRoom(int computer, int closet, bool workRoom)
+        public WorkRoom(int computer, int closet, bool hasWorkRoom)
         {
             this.computer = computer;
             this.closet = closet;
-            this.workRoom = workRoom;
+            this.hasWorkRoom = hasWorkRoom;
         }
 
         public void WorkRoomDeb()
         {
-            if (!workRoom) return;
-            {
-                Debug.Log($"パソコンは{computer}個あるよ");
-                Debug.Log($"クローゼットは{closet}個あるよ");
-            }
+            if (!hasWorkRoom) return;
+            Debug.Log($"パソコンは{computer}個あるよ");
+            Debug.Log($"クローゼットは{closet}個あるよ");
         }
     }
 
     class ToiletRoom
     {
         private readonly int toiletPaper;
-        private readonly bool toiletRoom;
+        private readonly bool hasToiletRoom;
 
 
-        public ToiletRoom(int toiletPaper, bool toiletRoom)
+        public ToiletRoom(int toiletPaper, bool hasToiletRoom)
         {
             this.toiletPaper = toiletPaper;
-            this.toiletRoom = toiletRoom;
+            this.hasToiletRoom = hasToiletRoom;
         }
 
         public void ToiletRoomDeb()
         {
-            if (!toiletRoom) return;
-            {
-                Debug.Log($"トイレットペーパーは{toiletPaper}個あるよ");
-            }
+            if (!hasToiletRoom) return;
+            Debug.Log($"トイレットペーパーは{toiletPaper}個あるよ");
         }
     }
 
     class BathRoom
     {
-        private readonly bool bathRoom;
         private readonly int syampoo;
+        private readonly bool hasBathRoom;
 
-        public BathRoom(int syampoo, bool bathRoom)
+        public BathRoom(int syampoo, bool hasBathRoom)
         {
             this.syampoo = syampoo;
-            this.bathRoom = bathRoom;
+            this.hasBathRoom = hasBathRoom;
         }
 
         public void BathRoomDeb()
         {
-            if (!bathRoom) return;
-            {
-                Debug.Log($"シャンプーは{syampoo}個あるよ");
-            }
-
+            if (!hasBathRoom) return;
+            Debug.Log($"シャンプーは{syampoo}個あるよ");
         }
     }
-
-
 }
