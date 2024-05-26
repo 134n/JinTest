@@ -11,7 +11,7 @@ public class MyHouse : MonoBehaviour
     [SerializeField] private bool hasBathRoom;//風呂
     [SerializeField] private bool hasToiletRoom;//トイレ
     [SerializeField] private bool hasWorkRoom;//作業部屋
-    
+
     enum RoomLayout
     {
         OneRoom,
@@ -107,7 +107,7 @@ public class MyHouse : MonoBehaviour
 
         public void RoomLayoutDeb()
         {
-            if (!hasRoomLayoutJudge)return;
+            if (!hasRoomLayoutJudge) return;
             Debug.Log($"間取りは{roomLayoutNow}です");
         }
 

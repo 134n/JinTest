@@ -15,7 +15,6 @@ public class Test :MonoBehaviour
         CallBuck callBuck = CallBuckMes;
 
         callBuck(moji);
-        
     }
 
     void CallBuckMes(string mes)
